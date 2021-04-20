@@ -2,35 +2,100 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Регистрация</title>
+	<title>Форма</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="wrap">
 		<form action="https://fom.in.ua/echo" method="post" name="loginForm">
-        <p>Регистрация</p>
+        <fieldset>
+        <legend>Регистрация</legend>
   <label for="fname">Ваше имя:*</label><br>
-  <input type="text" id="fname" name="fname"><br>
+  <input type="text" id="fname" name="fname" required autofocus autocomplete="on"><br>
   
   <label for="telephone">Телефон:*</label><br>
-  <input type="tel" id="telephone" name="telephone"><br>
+  <input type="tel" id="telephone" name="telephone" required autocomplete="on"><br>
   
     <label for="email">E-mail:*</label><br>
-  <input type="email" id="email" name="email"><br>
+  <input type="email" id="email" name="email" required autocomplete="on"><br>
   
   <label for="password">Пароль:*</label><br>
-  <input type="password" id="password" name="password"><br><br>
-  <input type="submit" value="отправить">
-  <input type="reset" value="очистить">
-   <p>Подбор рейса</p>
-     <p>
-     <select name="city">
-     <option value="kiev">Киев</option>
-     <option value="kharkov">Харьков</option>
-     <option value="odessa">Одесса</option>
+  <input type="password" id="password" name="password" required><br>
+  </fieldset>
+    <fieldset>
+   <legend>Подбор рейса</legend>
+     <p> Откуда:
+     <select name="countryfrom">
+     <optgroup label="Украина">
+       <option value="kiev" selected>Киев</option>
+       <option value="lvov">Львов</option>
+       <option value="odessa">Одесса</option>
+      </optgroup>
+      <optgroup label="Польша">
+       <option value="varshava">Варшава</option>
+       <option value="krakov">Краков</option>
+       <option value="sopot">Сопот</option>
+      </optgroup>
+        </select>
      </p>
+         <p> Куда:
+      <select name="countryto">
+     <optgroup label="Украина">
+       <option value="kiev" selected>Киев</option>
+       <option value="lvov">Львов</option>
+       <option value="odessa">Одесса</option>
+      </optgroup>
+      <optgroup label="Польша">
+       <option value="varshava">Варшава</option>
+       <option value="krakov">Краков</option>
+       <option value="sopot">Сопот</option>
+      </optgroup>
+        </select>
+       </p> 
+       <p>Туда: <input type="date" id="dateto" name="dateto"></p>
+       <p>Обратно: <input type="date" id="datefrom" name="datefrom"></p>
+         <p>Кол-во билетов: <input type="number" id="quantity" name="quantity" value="1"></p>
+       
+     <p> <b>Дети:</b><br><br>
+<input type="radio" id="nochildren" name="children" value="nochildren">
+  <label for="nochildren">Без детей</label><br>
+  <input type="radio" id="onechild" name="children" value="onechild">
+  <label for="onechild">1 ребенок</label><br>
+  <input type="radio" id="twochild" name="children" value="twochild">
+  <label for="twochild">2 ребенка</label>
+   </p> 
+   <p>
+   <b>Комфорт:</b><br><br>
+  <input type="checkbox" id="comfort1" name="comfort1" value="comfort1">
+  <label for="comfort1"> Больше места для ног</label><br>
+  <input type="checkbox" id="comfort2" name="comfort2" value="comfort2">
+  <label for="comfort2"> Питание</label><br>
+  <input type="checkbox" id="comfort3" name="comfort3" value="comfort3" checked>
+  <label for="comfort3"> больше места для багажа</label><br>
+  <input type="checkbox" id="comfort4" name="comfort4" value="comfort4">
+  <label for="comfort4"> Место у окна</label><br>
+  <input type="checkbox" id="comfort5" name="comfort5" value="comfort5">
+  <label for="comfort5"> Место в первом ряду</label><br>
+     </p>  
+    </fieldset>
+    <fieldset>
+   <legend>Информация по страховке</legend>
    
-   
+    <p> <input type="checkbox" id="assurance" name="assurance" value="assurance" checked>
+      <label for="assurance"> Мне нужна страховка</label><br></p>
+     
+      <p>
+       <label><b>Загрузите копию паспорта</b></label><br><br>
+       <input type="file">
+ </p> 
+
+ <textarea name="message" rows="10" cols="30">
+Дополнительная информация
+</textarea><br><br>
+
+    <input type="submit" value="отправить">
+  <input type="reset" value="очистить">
+  </fieldset>
   
 </form>
 	</div>
